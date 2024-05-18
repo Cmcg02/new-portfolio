@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import Header from "./Components/Header"
 import mixedMessages from './media/mixed-messages.mp4'
+import { Link } from "react-router-dom"
 
 const projects = [
     {
         name: "Mixed Messages",
         p: "My first working website. Simple html, css and javascript that will randomly generate a sentence and display an appropriate image. It is Lord of the Rings Themed",
         mp4: mixedMessages,
-        length: 13500
+        length: 13500,
+        link: "https://c-mcg-mixed.netlify.app/"
     },
     {
         name: "Spotify Jammming",
@@ -65,7 +67,7 @@ const ProjectsPage = () => {
                 btns[x].style = "background-color: auto"
             }
         }
-        
+
         return () => clearTimeout(timer)
     }, [i])
     
@@ -85,7 +87,7 @@ const ProjectsPage = () => {
             </div>
             <div className="text" id="project">
                 <section>
-                    <h3 id="projectHeader">{projects[i].name}</h3>
+                    <a target="_blank" href={projects[i].link}><h3 id="projectHeader">{projects[i].name}</h3></a>
                     <p>{projects[i].p}</p>
                 </section>
                 <video src={projects[i].mp4} type='video/mp4' autoPlay/>

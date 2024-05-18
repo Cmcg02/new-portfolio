@@ -68,8 +68,8 @@ main{
 .text{
     width: 60%;
     font-size: larger;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    /* letter-spacing: 0.5px; */
 }
 
 #project{
