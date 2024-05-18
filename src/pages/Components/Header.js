@@ -1,14 +1,17 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
-const Header = () => (<header>
-    <h1>C. Mcgaughey</h1>
-    <h2>Software Developer</h2>
-    <nav>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/about'}>About</Link>
-        <Link to={'/projects'}>Projects</Link>
-        <Link to={'/contact'}>Contact</Link>
-    </nav>
-</header>)
+const Header = () => {
+    const nav = useNavigate()
+    return (<header>
+        <h1>Callam McGaughey</h1>
+        <h2>Software Developer</h2>
+        <nav>
+            <span onClick={()=>nav('/')}>Home</span>
+            <span onClick={()=>nav('/about')}>About</span>
+            <span onClick={()=>nav('/projects')}>Projects</span>
+            <span onClick={()=>nav('/contact')}>Contact</span>
+        </nav>
+    </header>)
+}
 
 export default Header
